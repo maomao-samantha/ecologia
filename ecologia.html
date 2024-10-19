@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones Ecológicas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recomendaciones Ecológicas</h1>
+    </header>
+    <main>
+        <h2 id="recomendacion">¡Presiona el botón para recibir una recomendación!</h2>
+        <button onclick="mostrarRecomendacion()">Obtener Recomendación</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Recomendaciones Ecológicas</p>
+    </footer>
+
+    <script>
+        const acciones = [
+            "Evita conducir, usa la bicicleta o camina.",
+            "Usa el transporte público para reducir emisiones.",
+            "Planta un árbol o cuida plantas en tu hogar.",
+            "Reduce el uso de plásticos, lleva tu propia bolsa.",
+            "Desconecta los dispositivos electrónicos que no usas.",
+            "Participa en actividades de limpieza comunitaria.",
+            "Compra productos locales y de temporada.",
+            "Ahorra agua mientras te duchas o lavas los platos.",
+            "Recicla y separa tus residuos correctamente.",
+            "Apoya empresas que utilizan prácticas sostenibles."
+        ];
+
+        function mostrarRecomendacion() {
+            const recomendacion = acciones[Math.floor(Math.random() * acciones.length)];
+            document.getElementById("recomendacion").innerText = `Recomendación: ${recomendacion}`;
+        }
+    </script>
+</body>
+</html>
