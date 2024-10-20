@@ -88,9 +88,8 @@
         <button onclick="mostrarRecomendacion()">Obtener Recomendación</button>
     </main>
     <footer>
-        <p>&copy; 2024 Recomendaciones Ecológicas</p>
+        <p>© 2024 Recomendaciones Ecológicas</p>
     </footer>
-
     <script>
         const acciones = [
             "Evita conducir, usa la bicicleta o camina.",
@@ -99,10 +98,10 @@
             "Reduce el uso de plásticos, lleva tu propia bolsa.",
             "Desconecta los dispositivos electrónicos que no usas.",
             "Participa u organiza actividades de limpieza comunitaria.",
-            "Ahorra agua mientras te duchas o lavas los platos.",
+            "Ahorra agua mientras te duchas o lava los platos.",
             "Evita quemar basura, hojas y otros objetos, así como hacer fogatas en bosques o en plena ciudad.",
             "Recicla y separa tus residuos correctamente. Para más información, visualiza este video: <a href='https://www.youtube.com/watch?v=IoWmF0fo2Wc' target='_blank'>Video sobre reciclaje</a>.",
-            "Apoya empresas que utilizan prácticas sostenibles, como Grupo Bimbo, Coca-Cola y Banco Santander.",
+            "Apoya empresas que utilizan prácticas sostenibles.",
             "Usa productos de limpieza ecológicos para minimizar el impacto ambiental.",
             "Opta por ropa de segunda mano o de marcas que utilicen materiales sostenibles.",
             "Desplázate en bicicleta o a pie siempre que sea posible para reducir tu huella de carbono.",
@@ -119,14 +118,11 @@
                 alert("Ya has visto todas las recomendaciones. Reiniciando la lista.");
                 recomendacionesMostradas = [];
             }
-
             let recomendacion;
             do {
                 recomendacion = acciones[Math.floor(Math.random() * acciones.length)];
             } while (recomendacionesMostradas.includes(recomendacion));
-
             recomendacionesMostradas.push(recomendacion);
-
             const recomendacionElement = document.getElementById("recomendacion");
             recomendacionElement.innerHTML = `Recomendación: ${recomendacion}`;
             recomendacionElement.style.opacity = 0;
@@ -137,3 +133,4 @@
     </script>
 </body>
 </html>
+
