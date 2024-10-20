@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones - Recomendaciones Ecológicas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e8f5e9; /* Verde claro */
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: #4caf50; /* Verde fuerte */
+            color: #ffffff; /* Blanco */
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #ffffff; /* Blanco */
+            font-weight: bold;
+            padding: 10px 15px;
+            background-color: #388e3c; /* Verde oscuro */
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #66bb6a; /* Verde más claro al pasar el ratón */
+        }
+        main {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #8bc34a; /* Verde claro */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+        button:hover {
+            background-color: #7cb342; /* Verde más oscuro */
+            transform: scale(1.05);
+        }
+        #recomendacion {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #555;
+            transition: opacity 0.3s ease;
+            padding: 10px;
+            background-color: #ffffff; /* Blanco */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777; /* Gris claro */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recomendaciones Ecológicas</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="recomendaciones.html">Recomendaciones</a>
+            <a href="ecologia.html">Ecología</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <h2 id="recomendacion">¡Presiona el botón para recibir una recomendación!</h2>
+        <button onclick="mostrarRecomendacion()">Obtener Recomendación</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Recomendaciones Ecológicas</p>
+    </footer>
+
+    <script>
+        const acciones = [
+            "Evita conducir, usa la bicicleta o camina.",
+            "Usa el transporte público para reducir emisiones de CO₂, CO y NOx.",
+            "Planta un árbol o cuida plantas en tu hogar para aumentar la conversión de dióxido de carbono (CO₂) a oxígeno.",
+            "Reduce el uso de plásticos, lleva tu propia bolsa.",
+            "Desconecta los dispositivos electrónicos que no usas.",
+            "Participa u organiza actividades de limpieza comunitaria.",
+            "Ahorra agua mientras te duchas o lavas los platos.",
+            "Evita quemar basura, hojas y otros objetos, así como hacer fogatas en bosques o en plena ciudad.",
+            "Recicla y separa tus residuos correctamente. Para más información, visualiza este video: <a href='https://www.youtube.com/watch?v=IoWmF0fo2Wc' target='_blank'>Video sobre reciclaje</a>.",
+            "Apoya empresas que utilizan prácticas sostenibles, como Grupo Bimbo, Coca-Cola y Banco Santander.",
+            "Usa productos de limpieza ecológicos para minimizar el impacto ambiental.",
+            "Opta por ropa de segunda mano o de marcas que utilicen materiales sostenibles.",
+            "Desplázate en bicicleta o a pie siempre que sea posible para reducir tu huella de carbono.",
+            "Realiza un compostaje en casa para reducir residuos orgánicos.",
+            "Infórmate sobre las especies locales en peligro y apoya su conservación.",
+            "Apaga las luces y dispositivos eléctricos cuando no los necesites.",
+            "Realiza una dieta más basada en plantas para reducir el impacto ambiental de la producción de carne."
+        ];
+
+        let recomendacionesMostradas = [];
+
+        function mostrarRecomendacion() {
+            if (recomendacionesMostradas.length === acciones.length) {
+                alert("Ya has visto todas las recomendaciones. Reiniciando la lista.");
+                recomendacionesMostradas = [];
+            }
+
+            let recomendacion;
+            do {
+                recomendacion = acciones[Math.floor(Math.random() * acciones.length)];
+            } while (recomendacionesMostradas.includes(recomendacion));
+
+            recomendacionesMostradas.push(recomendacion);
+
+            const recomendacionElement = document.getElementById("recomendacion");
+            recomendacionElement.innerHTML = `Recomendación: ${recomendacion}`;
+            recomendacionElement.style.opacity = 0;
+            setTimeout(() => {
+                recomendacionElement.style.opacity = 1;
+            }, 100);
+        }
+    </script>
+</body>
+</html>
